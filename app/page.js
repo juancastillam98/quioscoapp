@@ -16,13 +16,7 @@ const customStyles = {
 };
 //Modal.setAppElement('#kioscoapp_nextjs');
 export default function Home() {
-
-    const quioscoData = useQuiosco();
-    if (!quioscoData) {
-        return <div>Cargando...</div>; // O manejar el caso de datos nulos de alguna manera
-    }
-
-    const { categoriaActual, modal } = quioscoData;
+    const { categoriaActual, modal } = useQuiosco();
 
     return (
         <>

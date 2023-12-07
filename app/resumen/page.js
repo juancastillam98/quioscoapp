@@ -16,11 +16,7 @@ const customStyles = {
 };
 Modal.setAppElement('#kioscoapp_nextjs');
 export default  function Resumen(){
-    const quioscoData = useQuiosco();
-    if (!quioscoData) {
-        return <div>Cargando...</div>; // O manejar el caso de datos nulos de alguna manera
-    }
-    const {pedido, categoriaActual, modal}=quioscoData
+    const {pedido, modal}=useQuiosco()
     return (
         <>
             <h1 className={"text-4xl font-black"}>Resumen</h1>

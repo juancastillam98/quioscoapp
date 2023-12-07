@@ -2,11 +2,8 @@ import Image from "next/image";
 import useQuiosco from "../hooks/useQuiosco";
 
 export const Categoria = ({categoria}) => {
-    const quioscoData = useQuiosco();
-    if (!quioscoData) {
-        return <div>Cargando...</div>; // O manejar el caso de datos nulos de alguna manera
-    }
-    const{categoriaActual, handleClickCategoria} = quioscoData;
+
+    const{categoriaActual, handleClickCategoria} = useQuiosco();
     const  {nombre, icono, id}=categoria
     return (
         <div className={`${categoriaActual?.id === id ? "bg-amber-400" : "" } flex items-center gap-4 w-full border p-5 hover:bg-amber-400`}>

@@ -3,8 +3,7 @@ import {useEffect, useCallback} from "react";
 import useQuiosco from "../../hooks/useQuiosco";
 import {formatearDinero} from "../../helpers";
 export default  function Total(){
-    const quioscoData = useQuiosco();
-
+    const {pedido, nombre, setNombre, colocarOrden, total} = useQuiosco();
     //usamos useCallback porque tiene memoria. Ideal para comprobar no si se ha hecho cambioos, sino para comprobar si tenía o no algo el array
     //no es lo mismo comprobar si se ha modificado algo, a comprobar si antes tenía algo y ahora no.
     const comprobarPedido = useCallback( ()=>{
@@ -15,10 +14,7 @@ export default  function Total(){
         comprobarPedido();
     },[pedido, comprobarPedido()])
 
-    if (!quioscoData) {
-        return <div>Cargando...</div>; // O manejar el caso de datos nulos de alguna manera
-    }
-    const {pedido, nombre, setNombre, colocarOrden, total} = quioscoData;
+
 
     return(
         <>

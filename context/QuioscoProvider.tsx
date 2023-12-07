@@ -36,6 +36,7 @@ export default function QuioscoProvider({children}){
 
     const obtenerCategorias = async ()=>{
         const {data}=await axios("/api/categorias");//es un objeto. Concretamente un array de objetos
+        console.log(data)
         setCategorias(data)
     }
     const handleClickCategoria = id=>{
@@ -104,7 +105,7 @@ export default function QuioscoProvider({children}){
     }
 
     return (
-        <QuioscoContext.Provider value={ paginaLista ?
+        <QuioscoContext.Provider value={
             {
             categorias, categoriaActual,
             handleClickCategoria,
@@ -115,8 +116,7 @@ export default function QuioscoProvider({children}){
             handleEliminarProduct,
             nombre, setNombre,
             colocarOrden, total
-        }
-        : null}>
+        }}>
             {children}
         </QuioscoContext.Provider>
     );

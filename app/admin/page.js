@@ -5,8 +5,6 @@ import {Pedido} from "../../components/Pedido";
 import { usePathname } from 'next/navigation'
 import {useEffect, useState} from "react";
 export default function Admin(){
-    const pathname= usePathname()
-
     /*
      data: datos de la consulta al endpoint (lo que devuelve el endpoint)
      error: en caso de que haya un error

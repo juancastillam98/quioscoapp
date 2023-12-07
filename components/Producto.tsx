@@ -3,12 +3,8 @@ import {formatearDinero} from "../helpers";
 import useQuiosco from "../hooks/useQuiosco";
 
 export const Producto = ({producto}) => {
-    const quioscoData = useQuiosco();
-    if (!quioscoData) {
-        return <div>Cargando...</div>; // O manejar el caso de datos nulos de alguna manera
-    }
 
-    const {handleSetProducto, handleChangeModal}=quioscoData;
+    const {handleSetProducto, handleChangeModal}=useQuiosco();
     const {nombre, imagen, precio}=producto;
     return (
         <div className={"border p-3"}>
