@@ -17,7 +17,7 @@ export const Sidebar = () => {
     return (
         <>
             <Image width={300} height={100} src={Logo} alt={"Imagen logotipo"}/>
-            {pathname === "/admin" && (
+            {pathname !== "/admin" && (
                 <nav id={"categorias"} className="mt-10 max-w-[95%]">
                     {categorias?.map(categoria =>(
                         <Categoria
