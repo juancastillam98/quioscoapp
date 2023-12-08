@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Logo from "../public/assets/img/logo.svg"
 import useQuiosco from "../hooks/useQuiosco";
-import {Categoria} from "../components/Categoria";
+import {Categoria} from "./Categoria";
 import {usePathname} from "next/navigation";
 export const Sidebar = () => {
     const pathname= usePathname()

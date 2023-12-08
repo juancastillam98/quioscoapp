@@ -1,7 +1,7 @@
 import Image from "next/image";
 import useQuiosco from "../hooks/useQuiosco";
 
-export const Categoria = ({categoria}) => {
+export const Categoria = ({categoria} ) => {
 
     const{categoriaActual, handleClickCategoria} = useQuiosco();
     const  {nombre, icono, id}=categoria
